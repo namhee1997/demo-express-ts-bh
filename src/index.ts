@@ -9,8 +9,6 @@ const PORT = 8080;
 
 dotenv.config();
 
-console.log(__dirname,'');
-
 app.use(cors());
 
 app.use(express.json());
@@ -18,7 +16,7 @@ app.use(express.urlencoded({ extended: false }));
 
 configMongoose();
 
-app.use(router);
+app.use('/v1', router);
 
 app.listen(PORT, () => {
   console.log(`Server is listening at http://localhost:${PORT}`);

@@ -15,7 +15,7 @@ export const getBlogsRepository = async () => {
 export const createBlogRepository = async (data: DataBlogType) => {
   try {
     const getAuthor = (await getUserByIdRepository(
-      data.authorId,
+      data.author,
     )) as DataUserType | null;
 
     const user = new Blog({
@@ -37,7 +37,7 @@ export const createBlogRepository = async (data: DataBlogType) => {
 export const updateBlogRepository = async (id: string, data: DataBlogType) => {
   try {
     const getAuthor = (await getUserByIdRepository(
-      data.authorId,
+      data.author,
     )) as DataUserType | null;
 
     const dataUpdate = await Blog.findOneAndUpdate(

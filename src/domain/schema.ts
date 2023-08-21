@@ -22,7 +22,7 @@ export interface DataBlogType {
   title: string;
   content: string;
   tags: string[];
-  authorId: string;
+  author: string;
 }
 
 export interface DataUserType {
